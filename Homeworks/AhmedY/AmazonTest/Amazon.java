@@ -20,7 +20,6 @@ public class Amazon {
 
 		
 		// next page click
-		//
 		driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[2]/div/span[7]/div/div/div/ul/li[7]/a")).click();
 		Keywords.waitFor(3);
 			
@@ -38,7 +37,6 @@ public class Amazon {
 		List<WebElement> cents = driver.findElements(By.className("a-price-fraction"));
 		
 		
-	
 			for (int i = 0; i < names.size() - 1; i++) {
 				String name = names.get(i).getText().isEmpty() ? "Empty Space": names.get(i).getText();
 				String symb = "Empty Symbol";
@@ -46,7 +44,6 @@ public class Amazon {
 					symb = symbol.get(i).getText();
 					
 				}
-
 					System.out.println((totalItem + 1) + ": " + name + "///" + symb
 						+ wholePrice.get(i).getText() + "." + cents.get(i).getText());
 					totalItem++;
@@ -56,10 +53,5 @@ public class Amazon {
 						return;	
 					}
 			}
-	
-
-		
-		
 	}
-	
 }
