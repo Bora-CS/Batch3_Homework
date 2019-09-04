@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Bora Batch3 Application
+    </title>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </script>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+      #StudentInfoTable {
+        width: 100%;
+      }
+    </style>
+    <style>
+      #div1 {
+        width: 350px;
+        height: 70px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- h1 is a headings element -->
+    <h1>Bora Batch3 Application</h1>
+
+    <!-- this is a paragraph -->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+      <a href="http://google.com" target="_blank">Ut enim ad minim veniam</a>,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. <strong>Duis aute</strong> irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      <em>Excepteur sint occaecat</em> cupidatat non proident,
+      <strong>sunt in</strong> culpa qui officia deserunt mollit anim id est
+      laborum.
+    </p>
+
+    <iframe
+      name="StudentInfoTable"
+      src="file:///Users/Muradil/Desktop/Batch3HTML/students.html"
+    ></iframe>
+
+    <!-- lists -->
+    <ul>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+
+    <ol>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ol>
+
+    <br />
+    <hr />
+
+    <h2>Student Registration Form</h2>
+    <!-- forms -->
+    <form action="submitForm()" method="POST">
+      <div>
+        <label>First Name: </label>
+        <input
+          type="text"
+          name="firstName"
+          placeholder="Enter your first name"
+        />
+      </div>
+      <div>
+        <label>Last Name: </label>
+        <input type="text" name="lastName" placeholder="Enter your last name" />
+      </div>
+      <div>
+        <label>Email: </label>
+        <input type="email" name="email" placeholder="Enter your email" />
+      </div>
+      <div>
+        <label>Message: </label>
+        <textarea name="message" placeholder="Enter your message"> </textarea>
+      </div>
+      <div>
+        <label>Gender:</label>
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <br />
+        <input type="radio" name="gender" value="male" /> Male<br />
+        <input type="radio" name="gender" value="female" /> Female<br />
+        <input type="radio" name="gender" value="other" /> Other<br />
+      </div>
+      <div>
+        <label>Age:</label>
+        <input type="number" name="age" value="30" />
+      </div>
+      <div>
+        <label>Birthday:</label>
+        <input type="date" name="birthday" />
+      </div>
+      <div>
+        <input type="checkbox" name="iamnotarobot" value="iamnotarobot" />I am
+        not a Robot!<br />
+      </div>
+      <div>
+        <input type="submit" name="submit" value="Let's go!" />
+      </div>
+    </form>
+
+    <br />
+    <button click="">Click me</button>
+
+    <br />
+    <!-- <img src="images/2021.jpg" width="300" alt="Badass corvette" /> -->
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <img
+      id="drag1"
+      src="images/2021.jpg"
+      draggable="true"
+      ondragstart="drag(event)"
+      height="69"
+    />
+
+    <p>Copyright &copy; 2019, Bora Batch3</p>
+  </body>
+</html>
